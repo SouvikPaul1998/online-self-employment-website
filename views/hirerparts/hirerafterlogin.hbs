@@ -1,0 +1,123 @@
+{{> hirerheader}}
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<div class="container-fluid">
+	<div class="row">
+		
+		<div class="col-md-12">
+		    <div class="card">
+		        <div class="card-body">
+		            <div class="row">
+		                <div class="col-md-3 border-right">
+		                    <h4>Add New Post</h4>
+		                </div>
+		                
+		            </div>
+                <hr>
+                
+                <form action="/hirer/insertjob" method="POST">
+		            <div class="row">
+		                <div class="col-md-8">
+                              <div class="form-group row">
+                                <label for="text" class="col-12 col-form-label">Enter Title here</label> 
+                                <div class="col-12">
+                                  <input id="text" name="j_name" placeholder="Enter Title here" class="form-control here" required="required" type="text">
+                                </div>
+                              </div>
+                              <div class="form-group row">
+                                  <label for="text" class="col-12 col-form-label">Date of hire</label> 
+                                  <div class="col-12">
+                                    <input type="Date" id="" name="j_date" placeholder="Date" class="form-control here" required="required">
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="text" class="col-12 col-form-label">Contact No.</label> 
+                                    <div class="col-12">
+                                      <input type="tel" id="" name="h_contactno" placeholder="Phone no." class="form-control here" required="required">
+                                    </div>
+                                  </div>
+                              <div class="form-group row">
+                                  <label for="textarea" class="col-12 col-form-label">Tell us more about your need</label> 
+                                  <div class="col-12">
+                                    <textarea name="j_description" placeholder="Describe your need here" cols="35" rows="5" class="form-control"></textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="text" class="col-12 col-form-label">Payment</label> 
+                                    <div class="col-12">
+                                      <input type="text" id="" name="j_payment" placeholder="Payment" class="form-control here" required="required">
+                                    </div>
+                                  </div>
+                                
+        		        </div>
+        		        <div class="col-md-4 ">
+                        <div class="card mb-3" style="max-width: 35rem;">
+                            <div class="card-header bg-light ">Categories</div>
+                            <div class="card-body">
+                              
+                                <div class="form-group row">
+                                  <label for="select" class="col-12 col-form-label">Select Category</label> 
+                                  <div class="col-8">
+                                      <select name="categories" id="select" class="custom-select" required="required" >
+                                          <option value="" disabled selected>Select your requirement</option>
+                                          <option value="Event_Organisers">Event Organizer</option>
+                                          <option value="Guitarist">Guitarist</option>
+                                          <option value="Vocalist">Vocalist</option>
+                                          <option value="Drummer">Drummer</option>
+                                           <option value="Photography">Photography</option>
+                                            <option value="Makeup_Artist">Makeup Artist</option>
+                                        </select>
+                                  </div>
+                                </div> 
+                              
+                            </div>
+                          </div><br><br><br>
+                          
+        		            <div class="card mb-3" style="max-width: 35rem;">
+                            <div class="card-header bg-light ">Publish</div>
+                            <div class="card-body">
+                             Click to post
+                            </div>
+                            <div class="card-footer bg-light">
+                                <button type="submit" value="Submit" class="btn btn-primary btn-sm">Publish</button>
+                            </div>
+                          </div> 
+                        </form>   
+        		        </div>
+        		        
+        		    </div>
+		        </div>
+	</div>
+</div>
+
+<!--<form action="/hirer/insertjob" method="post" style="display: inline-block">
+      <label for="Requirement"  style="font-weight: bold; color: rgb(36, 34, 34);">Your Requirement</label>
+      <select name="categories" >
+        <option value="" disabled selected>Select your requirement</option>
+        <option value="Guitarist">Guitarist</option>
+        <option value="Vocalist">Vocalist</option>
+        <option value="Drummer">Drummer</option>
+        <option value="Makeup_Artist">Makeup Artist</option>
+         <option value="Makeup_Artist">Photography</option>
+          <option value="Makeup_Artist">Makeup Artist</option>
+      </select>
+    
+      <label for="date" style="font-weight: bold; color: rgb(36, 34, 34);">Date of hire</label>
+      <input type="Date" id="" name="j_date" >
+      
+    
+      <label for="ph no"style="font-weight: bold; color: rgb(36, 34, 34);">Contact No.</label>
+      <input type="tel" id="" name="h_contactno" placeholder="Phone no.">
+  
+      <label for="ph no"style="font-weight: bold; color: rgb(36, 34, 34);">Alternate Contact No.</label>
+      <input type="tel" id="" name="" placeholder="Alternate Phone no.">
+  
+      <label for="description"style="font-weight: bold; color: rgb(36, 34, 34);">Tell us more about your need</label>
+      <textarea class="textDes" name="j_description" placeholder="Describe your need here" style="height: 100px"></textarea>
+      
+  
+      
+      <input type="submit" value="Submit"style="font-weight: bold">
+      </form>-->
+    

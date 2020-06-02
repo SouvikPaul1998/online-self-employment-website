@@ -1,0 +1,184 @@
+{{> empheader}}
+<title>Professional</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style type="text/css">
+        body {
+background-image: url("https://wallpaperplay.com/walls/full/9/f/c/34779.jpg");
+background-attachment:scroll;
+background-repeat:no-repeat;
+background-position:center;
+background-size:cover;
+height:1500px;
+}
+
+#body-container-fluid
+{
+background-image: url("../images/.jpg");
+background-color:inherit;	
+background-attachment:scroll;
+background-repeat:no-repeat;
+background-position:center;
+background-size:cover;
+margin-top:50px;		
+}
+
+.card 
+{
+padding:10px;
+border:0px solid white;
+box-shadow:0px 7px 16px 0px rgba(0, 0, 0, 0.09);
+}
+.card-title
+{
+color:;
+font-size:16px;
+text-align:center;
+}
+.card-text
+{
+color:#84919B;
+font-size:12px;	
+text-align:center;
+
+}
+
+#courses  
+{
+text-align:center;
+}
+
+/**********************
+		courses
+**********************/
+.list-inline-item 
+{
+font-size:13px;
+color:#84919B;
+ }
+/**********************
+		courses
+**********************/
+
+
+.address .w3-ul li
+ {
+	border:0px solid white;
+	line-height:1px;
+}
+span 
+{
+font-size:10px;
+float:right;
+background-color:#F4F7F9;
+border-radius:10px;
+padding:3px 8px;
+color:#84919B;
+}
+.lower-case
+{
+color:#84919B;
+font-size:12px;
+text-align:center;
+}
+#myUL {
+    list-style-type: none;
+    padding: 3px;
+    margin: 0;
+    margin-top: 20px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      columns: 2;
+  }
+</style>
+
+
+<div class="row">
+      <div class="col-md-10 col-sm-8 mx-auto">
+           <div class="card">
+               <div class="card-body" style="background-color: #eeefff">
+                    <div class="mt-2 text-center">
+                         <h4 style="color: rgb(12, 83, 238);">SEARCH EVENT</h4>
+                     
+                     {{#if this.hasadminnotloggedin}}
+                         <b style="color: red">INVALID UID OR PASSWORD</b>
+                     {{/if}}
+               
+                     </div>
+                     <div class="mt-2 text-center">
+                
+                        <form action="/employee/searchjob" method="POST">
+                       
+                         <div class="form-group">
+                             <select type="text" name="skill" class="form-control" placeholder="Enter skill" required >
+                                <option class="hidden"  selected disabled>Please select the Skill</option>
+                                <option value="Guitarist"> Guitarist</option>
+                                <option value="Vocalist"> Vocalist </option>
+                                <option value="Event_Organizers"> Event Organizers</option>
+                                <option value="Drummer"> Drummer</option>
+                                <option value="Photography">Photography</option>
+                                <option value="Makeup_Artist">Makeup Artist</option>
+                            </select>
+                         </div>                             
+                         <input type="submit" class="btn btn-primary btn-block" value="search">
+                     </form>
+                     <br>
+                     
+                   </div> <!-- Form tag div -->
+              </div> <!-- Card Body End -->
+          </div> <!-- Card End -->
+       </div> <!-- Col alignment end -->
+     </div> <!-- Row End -->
+
+<br/>
+
+
+{{#if status}}
+  {{#if hasAnyUser}}
+     <h3 style="text-align: center;color: rgb(25, 9, 245) ; "> Events </h3>
+     
+     <div>
+        {{#each getmatcheddocuments}}
+        <div class="columns">
+                <div class="container-fluid" id="body-container-fluid">
+					<!---- for body container ---->
+					<div class="container">
+						 <!-------mother container middle class------------------->
+						<div class="col-lg-12" id="myUL">
+						<div class="card" style="width:100%">
+							<img class="card-img-top" src="https://www.companylawclub.co.uk/images/company-law-basics.jpg" alt="Card image"  style="width:100%">
+							<div class="card-body">
+							  <h4 class="card-title">{{this.h_fullname}}</h4>
+								 <p class="card-text">We need a perfect guy for our work . We promise your work experience will be awesome!!</p>
+
+								<div class="address">								
+								<ul class="w3-ul w3-small">
+									<li> <i class="fa fa-calendar-o" aria-hidden="true"></i> {{ this.j_description }}  </li>
+									<li><i class="fa fa-calendar-o" aria-hidden="true"></i> {{ this.h_email }} </li>
+									<li><i class="fa fa-calendar-o" aria-hidden="true"></i> {{this.h_contactno}} </li>
+									<li><i class="fa fa-calendar-o" aria-hidden="true"></i> {{this.j_date}} </li>
+									<li><i class="fa fa-calendar-o" aria-hidden="true"></i> {{this.j_payment}} </li>
+								</ul>
+								</address>
+                                
+							<form action="/employee/applyjob" method="POST">	
+                            <input type="hidden" name="emailid" value={{this.h_email}}>
+							 <p><button class="w3-button w3-block w3-indigo" type="submit"   data-toggle="tooltip" data-placement="top" title="Free to message and hire us"> <i class="fa fa-comment-o fa-lg"></i> Apply </button></p>
+							</form>
+                            </div>
+							<hr>
+						</div>
+  
+						</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+        
+            </div>
+        {{/each}}
+    </table>
+    {{else}}
+        <h1 style="text-align: center;color: red"> NO EVENT FOUND </h1>
+    {{/if}}
+    {{/if}}
+
+    
